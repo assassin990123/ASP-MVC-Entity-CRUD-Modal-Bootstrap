@@ -1,0 +1,45 @@
+﻿@model ASP_MVC_Entity_CRUD_Modal_Bootstrap.Models.MyEntity
+
+<div class="modal-header">
+    <button class="btn btn-sm pull-right btn-danger" type="button" id="btnCloseModal" data-dismiss="modal">X</button>
+    <h2>Create</h2>
+</div>
+<div class="modal-body">
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal" id="CreateForm">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-xs-4" })
+                <div class="col-xs-5">
+                    <input class="form-control" type="text" name="FirstName" id="FirstName" placeholder="required" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SecondName, htmlAttributes: new { @class = "control-label col-xs-4" })
+                <div class="col-xs-5">
+                    <input class="form-control" type="text" name="SecondName" id="SecondName" placeholder="required" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-xs-4" })
+                <div class="col-xs-5">
+                    <input class="form-control" type="tel" name="PhoneNumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-xs-4" })
+                <div class="col-xs-5">
+                    <input class="form-control" type="email" name="Email" id="Email" placeholder="Enter email address" />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-sm btn-success" type="button" onclick="CreateNew()">Save</button>
+        </div>
+    }
+</div>
